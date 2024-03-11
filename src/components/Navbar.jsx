@@ -30,7 +30,7 @@ const Header = () => {
       <header className="shadow-md w-full md:px-6 py-4 px-7">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <a href="/" className="flex items-center">
+            <a href="/home" className="flex items-center">
               <FaHeartPulse className="h-8 w-8 text-red-600" />
               <span className="font-bold ml-2">ProHealthSeminar</span>
             </a>
@@ -62,7 +62,7 @@ const Header = () => {
         </div>
         {isSmallScreen && isMenuOpen && (
           <nav className="md:hidden flex flex-col mt-4">
-            <a href="/" className="m-2 text-gray-300">
+            <a href="/home" className="m-2 text-gray-300">
               Anasayfa
             </a>
             <Link to="/add-seminar" className="m-2 text-gray-300">
