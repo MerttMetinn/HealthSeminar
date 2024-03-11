@@ -51,7 +51,7 @@ const Header = () => {
             </div>
           ) : (
             <nav className="md:flex gap-4 items-center">
-              <a href="/" className="text-gray-400 hover:underline">
+              <a href="/home" className="text-gray-400 hover:underline">
                 Anasayfa
               </a>
               <Link to="/add-seminar" className="text-gray-400 hover:underline">

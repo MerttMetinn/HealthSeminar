@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,8 +19,8 @@ const Login = () => {
     
 
     try {
-      const response = await axios.post('http://185.92.2.229:8281/login_ldap', formData, { //okul dışından bağlanırken burası aktif olacak
-      //const response = await axios.post('http://192.168.2.16:8181/login_ldap', formData, { // okuldan bağlanırken burası aktif olacak
+      //const response = await axios.post('http://185.92.2.229:8281/login_ldap', formData, { //okul dışından bağlanırken burası aktif olacak
+      const response = await axios.post('http://192.168.2.16:8181/login_ldap', formData, { // okuldan bağlanırken burası aktif olacak
         header: {
           'Content-Type': 'multipart/form-data',
         },
