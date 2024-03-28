@@ -3,6 +3,8 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import backgroundImage from '../img/spot-lights-background-concept_23-2148661853.jpg';
+
 
 
 const Login = () => {
@@ -28,9 +30,12 @@ const Login = () => {
 
       console.log(response.data);
       if (username === 'baum.cc' && password === 'ChangeMe@1') {
-        toast.success('Login successful!');
         navigate('/home');
-      } else {
+      }
+      else if (username === 'admin' && password === 'admin') {
+        navigate('/admin');
+      }
+       else {
         toast.error('Login failed!');
       }
     } catch (error) {
@@ -40,8 +45,11 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-teal-400 to-blue-500 min-h-screen flex items-center justify-center">
-      <div className="bg-white shadow-md rounded px-12 pt-6 pb-8 mb-4">
+    <div
+      className="min-h-screen flex items-center justify-center"
+      style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <div className="bg-transparent border shadow-md rounded-md px-12 pt-6 pb-8 mb-4">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-bold mb-4">Login</h2>
           <div className="mb-4">

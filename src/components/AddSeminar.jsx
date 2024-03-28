@@ -140,7 +140,7 @@ const FormComponent = () => {
               >
                 Gönder
               </button>
-              <button className="py-2 px-4 w-2/5 bg-blue-400 text-black font-semibold rounded-lg shadow-md hover:bg-[#1f9da9]">
+              <button className="py-2 px-4 w-2/5 bg-red-500 text-black font-semibold rounded-lg shadow-md hover:bg-red-400">
                 {cardsCount} Gönderi
               </button>
             </div>

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import AddSeminar from "../components/AddSeminar";
 
-function Home() {
+function AddSeminarRoute() {
   return (
     <div>
       <Navbar/>
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AddSeminarRoute;

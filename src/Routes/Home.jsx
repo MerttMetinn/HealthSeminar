@@ -1,11 +1,10 @@
 import Navbar from "../components/Navbar";
-import SeminarCards from "../components/SeminarCards";
-
+import SeminarCards from "../components/SeminarCards"
 function Home() {
   return (
     <div>
       <Navbar />
-      <SeminarCards />
+      <SeminarCards/>
     </div>
   );
 }

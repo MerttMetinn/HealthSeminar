@@ -1,14 +1,23 @@
-import PropTypes from 'prop-types';
-
-const SeminarCards = ({ cards }) => {
+const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center mt-10">
-      {Array.isArray(cards) && cards.map((card, index) => (
-        <div key={index} className="max-w-xs mx-2 bg-black shadow-lg rounded-lg overflow-hidden m-4">
-          <img className="w-full h-48 object-cover object-center" src={card.image} alt="card" />
-          <div className="px-6 py-4">
-            <h2 className="font-bold text-xl mb-2">{card.title}</h2>
-            <p className="text-gray-700 text-base">{card.content}</p>
+    <div className="flex flex-wrap justify-center">
+      {[...Array(10)].map((_, index) => (
+        <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img
+              className="w-full"
+              src="https://online.hbs.edu/Style%20Library/api/resize.aspx?imgpath=/online/PublishingImages/blog/health-care-economics.jpg&w=1200&h=630"
+              alt="resim"
+            />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">Başlık</div>
+              <p className="text-gray-700 text-base">Açıklama</p>
+            </div>
+            <div className="px-6 pt-4 pb-2">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Düzenle
+              </button>
+            </div>
           </div>
         </div>
       ))}
@@ -16,14 +25,4 @@ const SeminarCards = ({ cards }) => {
   );
 };
 
-SeminarCards.propTypes = {
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      content: PropTypes.string,
-      image: PropTypes.string,
-    })
-  ),
-};
-
-export default SeminarCards;
+export default Card;

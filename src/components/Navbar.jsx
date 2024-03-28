@@ -2,7 +2,7 @@ import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { FaHeartPulse } from "react-icons/fa6";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,14 +29,14 @@ const Header = () => {
     <div className="bg-[#0f172a] text-gray-300 font-sans leading-normal tracking-normal">
       <header className="shadow-md w-full md:px-6 py-4 px-7">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <a href="/home" className="flex items-center">
+          <section className="flex items-center gap-2">
+            <Link to="/home" className="flex items-center">
               <FaHeartPulse className="h-8 w-8 text-red-600" />
               <span className="font-bold ml-2">ProHealthSeminar</span>
-            </a>
-          </div>
+            </Link>
+          </section>
           {isSmallScreen ? (
-            <div className="md:hidden">
+            <section className="md:hidden">
               {isMenuOpen ? (
                 <IoMdClose
                   className="h-7 w-7 text-red-600 cursor-pointer"
@@ -48,26 +48,42 @@ const Header = () => {
                   onClick={toggleMenu}
                 />
               )}
-            </div>
+            </section>
           ) : (
             <nav className="md:flex gap-4 items-center">
-              <a href="/home" className="text-gray-400 hover:underline">
+              <NavLink
+                to="/home"
+                className="text-gray-400 hover:underline"
+                activeClassName="font-bold"
+              >
                 Anasayfa
-              </a>
-              <Link to="/add-seminar" className="text-gray-400 hover:underline">
+              </NavLink>
+              <NavLink
+                to="/add-seminar"
+                className="text-gray-400 hover:underline"
+                activeClassName="font-bold"
+              >
                 Seminer Ekle
-              </Link>
+              </NavLink>
             </nav>
           )}
         </div>
         {isSmallScreen && isMenuOpen && (
           <nav className="md:hidden flex flex-col mt-4">
-            <a href="/home" className="m-2 text-gray-300">
+            <NavLink
+              to="/home"
+              className="m-2 text-gray-300"
+              activeClassName="font-bold"
+            >
               Anasayfa
-            </a>
-            <Link to="/add-seminar" className="m-2 text-gray-300">
+            </NavLink>
+            <NavLink
+              to="/add-seminar"
+              className="m-2 text-gray-300"
+              activeClassName="font-bold"
+            >
               Seminer Ekle
-            </Link>
+            </NavLink>
           </nav>
         )}
       </header>
